@@ -1,0 +1,89 @@
+.dock {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(7, 25, 54, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    gap: 10px;
+    padding: 8px 8px 4px; /* Angepasstes Padding */
+    height: 60px; /* Basisgröße des Docks */
+    z-index: 999;
+}
+
+
+.dock ul {
+    list-style: none;
+    justify-content: flex-start; /* Startet die Ausrichtung der Elemente am Anfang */
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.dock ul li {
+    margin: 5px 10px; /* Konsistentes Margin */
+    flex: 0 0 auto; /* Verhindert das Strecken der Listenelemente */
+}
+
+.dock ul li a {
+    display: block;
+    text-decoration: none;
+}
+
+.dock ul li img {
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    max-width: 52px; /* Basisgröße der Icons */
+    max-height: 52px;
+    transition: transform 0.3s ease;
+    will-change: transform; /* Erzwingen der Hardwarebeschleunigung */
+}
+
+.dock ul li:hover img {
+    transform: scale(1.8);
+    margin-bottom: 5px;
+
+}
+
+/* Grundlegende Stilisierung für die Links */
+.dock a {
+    position: relative;
+    display: inline-block;
+}
+
+/* Stilisierung der Tooltips */
+.dock a::after {
+    content: attr(data-tooltip); /* Holt den Text aus dem data-tooltip Attribut */
+    position: absolute;
+    top: -50px; /* Positioniert den Tooltip über dem Icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: rgba(243, 121, 22, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 8px 12px; /* Etwas größeres Padding für größeren Tooltip */
+    border-radius: 12px;
+    font-size: 16px; /* Etwas größere Schriftgröße */
+    white-space: nowrap;
+    visibility: hidden; /* Initial unsichtbar */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+    z-index: 100;
+}
+
+.dock a:hover::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-15px); /* Leichtes Anheben beim Hover für einen "Schwebe-Effekt" */
+}
