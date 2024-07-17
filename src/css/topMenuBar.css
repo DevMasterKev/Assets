@@ -1,0 +1,123 @@
+.top-menu-bar {
+    background-color: rgba(7, 25, 54, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 35px;
+    font-size: 15px;
+    color: #ffffff;
+    z-index: 1000;
+}
+
+/* Gemeinsame Stile für alle Icons in der Topbar */
+.topbar-icon, .battery img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.topbar-icon{
+    cursor: pointer;
+}
+
+
+
+.menu-logo {
+    background-image: url('https://assets.softr-files.com/applications/6805dac5-3271-4e2b-a5fa-8fd933c48cbf/assets/db1f73d2-21ca-41d2-aed2-76dbc7f96ff8.png');
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+
+.menu-items, .system-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-item {
+    margin-right: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: auto;
+    justify-content: space-around;
+    gap: 20px;
+    position: relative; /* Needed for positioning dropdowns */
+}
+
+.system-controls {
+    display: flex;
+    align-items: center;
+    height: auto;
+    justify-content: space-around;
+    gap: 20px;
+    position: relative; /* Needed for positioning dropdowns */
+}
+
+.battery {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+    padding-top: 0px;
+}
+
+.battery img{
+    margin-right: 0px;
+}
+
+.system-control-icon {
+position: relative; /* Ensure this is relative */
+}
+
+#logomenu {
+    position: absolute;
+    top: 45px; /* Abstand zum oberen Rand */
+    left: 10px; /* Abstand zum linken Rand */
+    background-color: rgba(7, 25, 54, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s, transform 0.3s;
+    transform-origin: top left;
+    transform: translateY(-100%);
+}
+
+#logomenu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+}
+
+#logomenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#logomenu ul li {
+    display: block;
+}
+
+#logomenu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+#logomenu ul li a:hover {
+    background-color: #555;
+}

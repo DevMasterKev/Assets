@@ -1,0 +1,90 @@
+.dock-folder {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease; /* Weicher Übergang für die Opazität */
+    background-color: rgba(7, 25, 54, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; /* Stellt sicher, dass der Folder über anderen Elementen angezeigt wird */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    border-radius: 15px;
+}
+
+.dock-folder .folder-header {
+    text-align: center;
+    padding: 10px 0;
+    width: 100%; /* Nimmt die maximale Breite des Elternelements an */
+}
+
+.folder-header {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    background-color: rgba(7, 25, 54, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.folder-content {
+    padding: 20px;
+    display: flex; /* Flex Container für die Icons */
+    flex-wrap: wrap; /* Erlaubt den Umbruch von Icons */
+    justify-content: center; /* Zentriert die Icons horizontal */
+    align-items: center; /* Zentriert die Icons vertikal */
+    overflow: auto;
+}
+
+.folder-content img {
+    display: block; /* Ändert die Anzeige zu Block */
+    position: relative; /* Positionierungskontext für das Pseudoelement */
+    width: 75px; /* Breite der Icons */
+    height: 75px; /* Höhe der Icons */
+    margin: 5px 10px; /* Zentriert das Bild mit automatischem Seitenabstand */
+}
+
+
+.folder-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfte Animation für Transformation und Schatten */
+    cursor: pointer; /* Ändert den Cursor, um die Interaktivität anzuzeigen */
+    display: flex; /* Flex Container für jedes Item */
+    flex-direction: column; /* Ordnet die Kinder (Bild und Text) vertikal an */
+    align-items: center; /* Zentriert die Kinder horizontal */
+    margin: 10px; /* Fügt etwas Abstand zwischen den Items hinzu */
+    border-radius: 10px;
+}
+
+.folder-item:hover {
+    transform: scale(1.1); /* Vergrößert das Element beim Hover */
+}
+
+.folder-item img {
+    margin-bottom: 5px; /* Fügt einen kleinen Abstand zwischen Bild und Text hinzu */
+}
+
+.folder-item div {
+    text-align: center; /* Zentriert den Text unter dem Bild */
+    color: #fff; /* Setzt die Textfarbe (optional) */
+    font-size: 14px; /* Setzt die Textgröße (optional) */
+}
+
+/* Klasse zum Anzeigen des Dock-Folders */
+.dock-folder.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.folder-item.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+

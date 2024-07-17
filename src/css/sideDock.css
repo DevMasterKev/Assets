@@ -1,0 +1,90 @@
+.side-dock {
+    position: fixed;
+    top: 50px;
+    height: auto;
+    right: 20px;
+    width: 400px;
+    background-color: rgba(7, 25, 54, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    z-index: 1000; /* Stellt sicher, dass das Side-Dock über anderen Elementen angezeigt wird */
+    overflow: hidden; 
+    opacity: 0;
+    visibility: hidden; /* Hinzufügen für ein besseres Ein-/Ausblenden */
+    transition: opacity 0.5s, visibility 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+}
+
+
+       /* Styles for radio and volume control */
+
+       .radio-container {
+        text-align: center; /* Ausrichtung nach links ändern */
+        padding: 15px;
+        border-radius: 10px;
+        width: 100%;
+    }
+    
+    /* Spezifische Benennung und Stilisierung für den Radio-Auswahl-Button */
+.radio-select {
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #dd6f15;
+    color: white;
+    border: 1px solid #ccc;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    font-family: 'Coming Soon', cursive; /* Setzt die Schriftart für den Button */
+}
+
+
+/* Spezifische Stilisierung für die Radio-Buttons */
+.radio-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #0a194b;
+    color: white;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-left: 10px;
+    font-family: 'Coming Soon', cursive; /* Setzt die Schriftart für den Button */
+}
+
+.radio-button:hover {
+    background-color: #dd6f15;
+}
+
+/* Stilisierung für den Player, um ihn zentriert zu halten */
+#radioPlayer {
+    width: 90%; /* Anpassung der Breite für Zentrierung */
+    margin-top: 10px;
+}
+
+
+
+/* Flex-Container für die Ausrichtung von select und buttons */
+.radio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+    
+    @media (max-width: 768px) {
+        .radio-container {
+            padding: 15px;
+            margin-top: 10px;
+        }
+    }
+    
